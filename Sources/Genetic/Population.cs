@@ -47,6 +47,8 @@ namespace AForge.Genetic
         private double		fitnessAvg = 0;
         private IChromosome	bestChromosome = null;
 
+        public List<IChromosome> Chromosomes => this.population;
+
         /// <summary>
         /// Crossover rate, [0.1, 1].
         /// </summary>
@@ -612,7 +614,7 @@ namespace AForge.Genetic
         }
 
         // Find best chromosome in the population so far
-        private void FindBestChromosome( )
+        protected void FindBestChromosome( )
         {
             bestChromosome = population[0];
             fitnessMax = bestChromosome.Fitness;
